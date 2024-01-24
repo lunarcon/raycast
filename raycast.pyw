@@ -86,11 +86,12 @@ def ray_casting():
         for depth in range(1, 800, 8):
             test_x = player.x + cos_a * depth
             test_y = player.y + sin_a * depth
-            if pg.Rect(test_x, test_y, 5, 5).collidelist(walls) != -1:
-                for depth2 in numpy.arange(depth, depth - 5, -0.25):
+            if pg.Rect(test_x, test_y, 1, 1).collidelist(walls) != -1:
+                for depth2 in numpy.arange(depth, depth - 9, -1):
                     test_x = player.x + cos_a * depth2
                     test_y = player.y + sin_a * depth2
                     if pg.Rect(test_x, test_y, 1, 1).collidelist(walls) == -1:
+                        depth = depth2
                         break
                 break
 
