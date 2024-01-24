@@ -125,7 +125,8 @@ def draw_gui():
     for wall in walls:
         pg.draw.rect(mini_map, WHITE, (wall.x//MINIMAP_SCALE, wall.y//MINIMAP_SCALE, wall.width//MINIMAP_SCALE, wall.height/8))
     pg.draw.circle(mini_map, RED, (int(player.x//MINIMAP_SCALE), int(player.y//MINIMAP_SCALE)), 2)
-    pg.draw.line(mini_map, RED, (int(player.x//MINIMAP_SCALE), int(player.y//MINIMAP_SCALE)), (int(player.x//MINIMAP_SCALE + math.cos(math.radians(player.angle))*10), int(player.y//MINIMAP_SCALE + math.sin(math.radians(player.angle))*10)), 1)
+    pg.draw.line(mini_map, RED, (int(player.x//MINIMAP_SCALE), int(player.y//MINIMAP_SCALE)), (int(player.x//MINIMAP_SCALE + math.cos(math.radians(player.angle - 30))*10), int(player.y//MINIMAP_SCALE + math.sin(math.radians(player.angle - 30))*10)), 1)
+    pg.draw.line(mini_map, RED, (int(player.x//MINIMAP_SCALE), int(player.y//MINIMAP_SCALE)), (int(player.x//MINIMAP_SCALE + math.cos(math.radians(player.angle + 30))*10), int(player.y//MINIMAP_SCALE + math.sin(math.radians(player.angle + 30))*10)), 1)
     mini_map.set_alpha(200)
     screen.blit(mini_map, (SCREEN_WIDTH - SCREEN_WIDTH//MINIMAP_SCALE, 0))
 
